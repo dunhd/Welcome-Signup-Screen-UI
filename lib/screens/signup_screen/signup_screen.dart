@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:welcome_signup_ui/components/action_button.dart';
 import 'package:welcome_signup_ui/components/bordered_actionButton.dart';
+import 'package:welcome_signup_ui/components/footer_image.dart';
 import 'package:welcome_signup_ui/components/footer_info.dart';
 import 'package:welcome_signup_ui/components/heading_info.dart';
 import 'package:welcome_signup_ui/components/input_field.dart';
 import 'package:welcome_signup_ui/components/top_nav.dart';
 import 'package:welcome_signup_ui/constants.dart';
+import 'package:welcome_signup_ui/screens/login_screen/login_screen.dart';
 
 class SignUpScreen extends StatelessWidget {
   @override
@@ -25,7 +27,14 @@ class SignUpScreen extends StatelessWidget {
                   children: <Widget>[
                     TopNav(
                       action: 'Login',
-                      press: () {},
+                      press: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LogInScreen(),
+                          ),
+                        );
+                      },
                     ),
                     SizedBox(height: size.height * 0.02),
                     HeadingInfo(
@@ -57,15 +66,7 @@ class SignUpScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: size.height * 0.03),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/office.jpg'),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
+            FooterImage(imgUrl: 'assets/images/office.jpg'),
           ],
         ),
       ),

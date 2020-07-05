@@ -1,6 +1,6 @@
-# welcome_signup_ui
+# Welcome SignUp Screen UI
 
-A new Flutter project.
+Signup and Login screen UI using Flutter
 
 ## Getting Started
 
